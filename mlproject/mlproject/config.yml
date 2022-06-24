@@ -1,0 +1,19 @@
+location:
+    today_data : '/home/vasanth/jenkins/mlproject/data/processed/data.csv'
+    today_data_with_target : '/home/vasanth/jenkins/mlproject/data/processed/daily_data.csv'
+    tracking_uri : 'file:////home/vasanth/jenkins/mlproject/src/models/mlruns'
+    registry_uri : 'postgresql://postgres:postgres@localhost/mlflow'
+    today_data_predictions: '/home/vasanth/jenkins/mlproject/data/predictions/mlflow_daily.csv'
+    yesterday_data : '/home/vasanth/jenkins/mlproject/data/data_drift/yesterday_data.csv'
+    yesterday_data_predictions : '/home/vasanth/jenkins/mlproject/data/data_drift/yesterday_data_results.csv'
+    trained_model_predictions : '/home/vasanth/jenkins/mlproject/data/data_drift/trained_data_results.csv'
+    mlflow_artifacts : '/home/vasanth/jenkins/mlproject/src/models'
+    data_drift : '/home/vasanth/jenkins/mlproject/src/visualization/data_drift.html'
+    model_drift : '/home/vasanth/jenkins/mlproject/src/visualization/regression_drift.html'
+experiment_details:
+    name : 'random_forest_6'
+model_parameters:
+   target : quality
+   problem_type : 'regression'
+   model_type : RandomForestRegressor
+   parameters :  {'max_depth' : [1,2], 'n_estimators' : [10,500,1000], 'max_features': [1,2]}
